@@ -36,15 +36,21 @@ El README prioriza el orden de 13 secciones y los enunciados completos solicitad
 - SymPy: identidades y equivalencia algebraica discreta. No demuestra existencia ni unicidad de equilibrio.
 - LP: beneficio no positivo de cada actividad, recursos humanos, dualidad y dotación suficiente de cómputo. La discretización no prueba las propiedades del continuo.
 - Mallas: 121 y 241 nodos; la raíz uniforme para h=.5 difiere de la analítica en .002962 y .001556, respectivamente. Error no necesariamente monótono.
-- LuaLaTeX: compilación y revisión visual; la foto sigue pendiente por diseño.
-- Lean: check fallido, exit 2, con Python 3.12.14; no existe carpeta formalizada.
+- LuaLaTeX: compilación y revisión visual; la foto real aportada está incorporada; falta su ampliación discreta.
+- Lean: nueve lemas algebraicos sin `sorryAx`; check rápido exit 0, pero build general con seis `sorry`. Las proposiciones completas siguen pendientes y sus Specs necesitan corrección semántica.
 
 ## Revisión antes del merge
 
-1. Copiar y fotografiar los dos umbrales de `hand/README.md`, añadir el PNG real y recompilar dos veces.
+1. La foto real está incluida. Para satisfacer todo el requisito manuscrito, ampliarla con el equilibrio de dos tipos y ambos umbrales de `hand/README.md`.
 2. Revisar que se distingue el umbral discreto H del umbral del continuo bar a.
 3. Revisar el régimen humano del cruce uniforme: t, a, s y q deben quedar ordenados; no omitir el término ht²/2.
 4. Comprobar la inferencia de conflicto en todo el dominio: debajo de w(0), wA(0)<a<=w(0)=wN(0); en a=0, wA(0)=0. No confundir preferencia N frente a A con ganancias frente a no IA.
-5. Reanudar AppliedModelingLib con Sol xhigh, copiar literalmente la carpeta resultante, repetir check y reemplazar la diapositiva de bloqueo solo con pruebas reales.
-6. Revisar alcance de licencia de los futuros archivos Lean, ignorados y ausencia del PDF del paper en Git.
-7. Hacer el merge personalmente y comentar el link en el issue; el asistente no realiza esas acciones.
+5. Leer el lema de la diapositiva junto con `MainTheorems.lean`: asumir beneficio cero y una asignación no demuestra que esa asignación ocurra. Revisar los seis Specs pendientes; el check rápido exitoso no los certifica.
+6. Revisar procedencia y licencia de AppliedModelingLib, los caches ignorados y la ausencia del PDF del paper en Git.
+7. La estudiante autorizó posteriormente publicar los cambios y hacer el merge; esa instrucción reemplaza la reserva anterior del merge.
+
+## Copia de AppliedModelingLib
+
+Se compararon los SHA-256 de los 27 archivos de la carpeta original y `lean/`: coincidencia completa. `git add lean/` se ejecutó sin `-f`; se incluyen 25 archivos y quedan ignorados únicamente `source-audited.pdf` y `source.txt`. Los registros CHECK, BUILD y AXIOM están versionados aquí, aunque el checkout de origen los ignoraba mediante sus reglas globales. No se reorganizaron ni editaron los archivos copiados. La licencia Apache-2.0 del origen se reproduce en `LICENSE`, además de la licencia MIT del material propio.
+
+La comprobación local del diff ya añadido señala una línea vacía final en `lean/INDEPENDENT_REVIEW.md` y `lean/PENDING.md`. Se conserva el original literal; son advertencias de espacios, no errores de Lean. El `check --fast` del origen no detectó esas líneas porque los archivos generados aún no estaban añadidos allí.

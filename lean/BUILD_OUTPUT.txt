@@ -1,0 +1,8 @@
+⚠ [8316/8317] Replayed IT25KnowledgeEconomy.ProofInterface
+warning: papers/IT25KnowledgeEconomy/ProofInterface.lean:20:8: declaration uses `sorry`
+warning: papers/IT25KnowledgeEconomy/ProofInterface.lean:31:8: declaration uses `sorry`
+warning: papers/IT25KnowledgeEconomy/ProofInterface.lean:42:8: declaration uses `sorry`
+warning: papers/IT25KnowledgeEconomy/ProofInterface.lean:53:8: declaration uses `sorry`
+warning: papers/IT25KnowledgeEconomy/ProofInterface.lean:64:8: declaration uses `sorry`
+warning: papers/IT25KnowledgeEconomy/ProofInterface.lean:75:8: declaration uses `sorry`
+Build completed successfully (8317 jobs).

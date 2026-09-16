@@ -9,7 +9,7 @@
 
 <p align="center">
   <a href="presentation.tex"><img alt="fuente LaTeX" src="https://img.shields.io/badge/fuente-LaTeX-0E7490?style=flat-square"></a>
-  <a href="lean/PENDIENTE.md"><img alt="Lean pendiente" src="https://img.shields.io/badge/Lean-pendiente-E11D48?style=flat-square"></a>
+  <a href="lean/PENDING.md"><img alt="Lean parcial" src="https://img.shields.io/badge/Lean-parcial-E11D48?style=flat-square"></a>
   <a href="sim.py"><img alt="auditoría SymPy" src="https://img.shields.io/badge/auditor%C3%ADa-SymPy-6D28D9?style=flat-square"></a>
   <a href="LICENSE"><img alt="licencia MIT" src="https://img.shields.io/badge/licencia-MIT-0E7490?style=flat-square"></a>
 </p>
@@ -71,7 +71,9 @@ La desigualdad es derivación propia: en el cruce $w^A(0)=w(0)<w^A(\bar a)=\bar 
 
 ## Formalización en Lean
 
-**Pendiente, no verificada.** Se inició AppliedModelingLib con GPT-5.6 Sol, `xhigh`, y Python 3.12.14. El límite de uso interrumpió el agente antes de generar la carpeta del paper. El check real terminó con **exit 2**, falta `papers/IT25KnowledgeEconomy/status.json`. No hay teoremas Lean probados: [bloqueo](lean/PENDIENTE.md) y [salida completa](lean/CHECK_OUTPUT.txt). La diapositiva muestra esta frontera explícitamente.
+**Parcial, con nueve lemas algebraicos verificados.** AppliedModelingLib se ejecutó con GPT-5.6 Sol, `xhigh`, Python **3.12.14** y Lean **4.30.0-rc2**. [MainTheorems.lean](lean/MainTheorems.lean) prueba beneficio cero → salario, las ramas con renta cero y renta igual a capacidad, sus umbrales condicionales y comparaciones de ofertas discretas. [AXIOM_OUTPUT.txt](lean/AXIOM_OUTPUT.txt) no registra `sorryAx` para esos nueve lemas.
+
+El **check `--fast` termina con exit 0**, pero solo compila `PaperInterface` y revisa el diff: **no certifica las Proposiciones 1–6**. El build completo termina con seis advertencias `sorry`. Sus Specs son borradores semánticamente incompletos: faltan restricciones de equilibrio y la definición correcta de los ganadores de la base. No se demostró existencia, selección de asignaciones, producto agregado ni el umbral general de Prop. 5. En particular, $w(0)/(1-h)$ es un umbral **condicional al solver IA**, no una fórmula universal para $\bar a$. Véanse [check íntegro](lean/CHECK_OUTPUT.txt), [build completo](lean/BUILD_OUTPUT.txt) y [límites pendientes](lean/PENDING.md).
 
 ## Reproducción
 
@@ -82,11 +84,11 @@ pip install -r requirements.txt
 python sim.py
 lualatex presentation.tex
 lualatex presentation.tex
-# Desde un checkout de AppliedModelingLib, DESPUÉS de generar la carpeta:
+# Desde AppliedModelingLib, con la carpeta restaurada según lean/README.md:
 python3 scripts/paper_contribution.py check IT25KnowledgeEconomy --fast
 ```
 
-El último comando no corre desde esta raíz: `lean/` registra un bloqueo. `sim.py` verifica identidades SymPy, vaciado de recursos y dualidad del LP; compara dos mallas y regenera PDF/PNG. No prueba por sí solo las proposiciones del continuo. El deck es único, de 16 diapositivas y 20 minutos; guion y límites en [extra/notes.md](extra/notes.md).
+El último comando corre desde AppliedModelingLib; [lean/README.md](lean/README.md) explica cómo restaurar esta copia y registrar su módulo en Lake. La procedencia es AppliedModelingLib, commit `2db7d108cd3a2cb10148974bb2a77856e7d87428`; su referencia a licencia Apache-2.0 remite al repositorio de origen, y la licencia MIT de este curso no la sustituye. `lean/` conserva literalmente la carpeta generada; los caches `source-audited.pdf` y `source.txt` permanecen locales e ignorados, sin usar `git add -f`. `sim.py` verifica identidades SymPy, vaciado de recursos y dualidad del LP; compara dos mallas y regenera PDF/PNG. No prueba por sí solo las proposiciones del continuo. El deck es único, de 16 diapositivas y 20 minutos; guion y límites en [extra/notes.md](extra/notes.md).
 
 ## Estructura
 
@@ -101,10 +103,10 @@ El último comando no corre desde esta raíz: `lean/` registra un bloqueo. `sim.
 │   │   └── bottom-winners-threshold.png
 │   └── notes.md
 ├── hand/
-│   └── README.md
+│   ├── README.md
+│   └── manual-verification.png
 ├── lean/
-│   ├── CHECK_OUTPUT.txt
-│   └── PENDIENTE.md
+│   └── ...  # carpeta completa de AppliedModelingLib; ver lean/README.md
 ├── paper/
 │   ├── README.md
 │   └── ide-talamas-2312.05481v11.pdf  # local; ignorado por git
@@ -119,7 +121,7 @@ El último comando no corre desde esta raíz: `lean/` registra un bloqueo. `sim.
 └── .gitignore
 ```
 
-La estudiante añade después su propia foto en `hand/`; este repositorio no inventa esa evidencia.
+La foto real de la estudiante está en `hand/manual-verification.png`. Su alcance y la ampliación discreta aún pendiente se explican en [hand/README.md](hand/README.md); no se inventa evidencia manuscrita.
 
 ## Referencia
 

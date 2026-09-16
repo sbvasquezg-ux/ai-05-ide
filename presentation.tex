@@ -231,50 +231,50 @@ $h\to1^-$ & Antes se cruza $h_0(G)<1$. La garantía de ganadores superiores no s
 \sourcefoot{§3.1, pp. 9--13; Prop. 2, pp. 19--20. Extensión y crítica propias, extensions.md §8.}
 \end{frame}
 
-\begin{frame}[fragile]{Lean: frontera verificable y bloqueo real}
-\small
-\textbf{1. Objeto original que se quería traducir}
+\begin{frame}[fragile]{Lean: nueve lemas probados; equilibrio pendiente}
+\footnotesize
+\textbf{1. Ecuaciones y traducción condicional.}
 \[
-n(z)[a-w(z)]-r=0\ \Longrightarrow\ w(z)=a-h(1-z)r.
+n(z)=\frac{1}{h(1-z)},\quad n(z)(a-w)-r=0,\quad r=0
+\ \Longrightarrow\ w>w_0\iff a>w_0.
 \]
-\textbf{2. Enunciado Lean y prueba: no generados.} El agente se interrumpió por límite de uso antes de crear la carpeta. No se inventa un fragmento.
-\begin{lstlisting}
--- No hay teorema ni prueba Lean generados.
--- Formalizacion pendiente; esto no es codigo verificado.
+\textbf{2. Enunciado y prueba reales de MainTheorems.lean.}
+\begin{lstlisting}[basicstyle=\ttfamily\fontsize{7}{8}\selectfont,escapeinside={(*@}{@*)}]
+theorem nonautonomous_bottom_improvement_iff
+    {h z aiKnowledge workerWage preAIWage : (*@$\mathbb{R}$@*)}
+    (h_pos : 0 < h)
+    (z_lt_one : z < 1)
+    (zeroProfit : topAutomatedProfit h z aiKnowledge workerWage 0 = 0) :
+    workerWage > preAIWage (*@$\leftrightarrow$@*) aiKnowledge > preAIWage := by
+  rw [nonautonomous_workerWage_eq_aiKnowledge h_pos z_lt_one zeroProfit]
 \end{lstlisting}
-\textbf{3. Interpretación.} Había que representar reales, dominio $0<h<1$, $z<1$ y beneficio cero. Incluso probar esta identidad no demostraría el equilibrio ni la Prop. 5.
+\textbf{3. Mi interpretación.} Reales, $h>0$, $z<1$ y beneficio cero: Lean sustituye $w=a$. \alert{No prueba que el trabajador use IA en equilibrio.} Las Props. 5 y 6 siguen pendientes; el umbral autónomo probado es condicional al solver IA.
 
 \medskip
-\textbf{4. Check real: exit 2, Python 3.12.14.}
-\begin{lstlisting}[language={}]
-error: could not read papers/IT25KnowledgeEconomy/status.json
-[Errno 2] No such file or directory
-\end{lstlisting}
-\sourcefoot{Ecuación: §3.1, p. 12; Prop. 2, p. 20. Registro: lean/CHECK\_OUTPUT.txt.}
+\textbf{4. Verificación real.} Python 3.12.14; \texttt{check --fast}: exit 0. Nueve lemas sin \texttt{sorryAx}; build completo: seis advertencias \texttt{sorry} en las proposiciones. \alert{Check rápido exitoso no significa paper demostrado.}
+\sourcefoot{Tecnología: §3.1, pp. 9--12; renta cero: Prop. 6, p. 27. Deducción condicional propia. lean/CHECK\_OUTPUT.txt, BUILD\_OUTPUT.txt y AXIOM\_OUTPUT.txt.}
 \end{frame}
 
-\begin{frame}{La evidencia manual y lo que no acepté de la IA}
+\begin{frame}{Evidencia manuscrita: qué demuestra la hoja}
 \begin{columns}[T,onlytextwidth]
-\column{.53\textwidth}
+\column{.51\textwidth}
 \small
-\textbf{Objeción evaluada:} la frase ``autonomía, no capacidad'' omite dos umbrales.
+\textbf{Foto real aportada por la estudiante.}
 \[
- (1-h)H<H.
+n(z)=\frac{1}{h(1-z)},\quad w=a-rh(1-z).
 \]
-\textbf{Mi veredicto analítico:} ambos regímenes requieren capacidad para una ganancia estricta en la base; sus mecanismos y umbrales difieren.
+Con $r=0$, un worker asignado a IA recibe $w=a$: su ganancia exige $a>w(0)$.
 
 \medskip
-\textbf{Corrección durante la auditoría:} mi cálculo uniforme omitió $ht^2/2$. El contraste con el LP detectó el fallo; no era un error del paper.
-\column{.43\textwidth}
-\IfFileExists{hand/manual-verification.png}{\includegraphics[width=\linewidth,height=.58\textheight,keepaspectratio]{hand/manual-verification.png}}{%
-\begin{block}{Foto pendiente de la estudiante}
-\small Copiar la derivación de dos tipos de \texttt{hand/README.md}, terminar en los dos umbrales y añadir su fotografía real.
+\textbf{Alcance.} La hoja enuncia el umbral autónomo. \alert{No desarrolla el equilibrio discreto de dos tipos ni deriva su umbral.} Ese desarrollo está tipeado en \texttt{hand/README.md} y \texttt{extensions.md}.
 
 \medskip
-El repositorio no inventa evidencia manuscrita.
-\end{block}}
+\textbf{Veredicto.} La capacidad cruza los umbrales; la autonomía también cambia los usos y el costo de oportunidad. No se reduce a mover un número.
+\column{.46\textwidth}
+\centering
+\includegraphics[height=.76\textheight,width=\linewidth,keepaspectratio]{hand/manual-verification.png}
 \end{columns}
-\sourcefoot{Derivación propia; contraste interpretativo con Props. 5--6, pp. 24 y 27.}
+\sourcefoot{Foto de la estudiante, sin modificaciones. Contraste: §3.1, pp. 9--12; Props. 5--6, pp. 24 y 27.}
 \end{frame}
 
 \begin{frame}{Veredicto y alcance de lo aprendido}
@@ -285,7 +285,7 @@ La autonomía cambia los usos posibles y el costo de oportunidad. La capacidad d
 \item $w(0)<\bar a$: hay una franja donde N ayuda a la base y A no le da ganancia estricta frente a no IA.
 \item El conflicto A--N cubre todo $a<1$: debajo de $w(0)$, N evita pérdidas aunque no se adopte; encima hay ganancia estricta.
 \item SymPy y LP verifican piezas y ejemplos. La prueba general del continuo no se sustituye por una malla.
-\item Pendientes para la estudiante: foto real, formalización Lean y revisión de las fronteras de régimen.
+\item Límites pendientes: ampliar la hoja con el caso discreto, probar el equilibrio en Lean y revisar las fronteras de régimen.
 \end{itemize}
 \sourcefoot{Props. 5--6, pp. 24--27; comparación y evaluación propias. Ver extensions.md.}
 \end{frame}

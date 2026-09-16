@@ -1,4 +1,7 @@
 paper/*.pdf
+# Source caches copied literally from AppliedModelingLib remain local.
+lean/source-audited.pdf
+lean/source.txt
 *.aux
 *.log
 *.nav

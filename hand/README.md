@@ -1,6 +1,8 @@
-# Derivación discreta que debe fotografiar la estudiante
+# Evidencia manuscrita y derivación discreta
 
-Copiar el siguiente bloque en **media carilla** (como máximo una hoja) y fotografiarlo como `hand/manual-verification.png`. Es una especialización de dos tipos, no una prueba del continuo. Aquí $\mu_L=\mu_H=1/2$, $z_L=0<z_H=H<1$ y $0<h<1$; no suponemos masas arbitrarias con salarios únicos. El ejemplo numérico usa $H=.8$, $h=.5$, $a=z_{AI}=.6$ y cómputo $\mu=10$.
+La estudiante entregó `manual-verification.png` (archivo original «Tarea 4.png»), copiado sin modificaciones. SHA-256: `9b4aadf7bd8777e0d349526dca73ca3196a4f7e2fd77c4c65a4c9755f274ce12`. La foto deriva tamaño y producto del equipo, beneficio cero y el umbral no autónomo; enuncia el umbral autónomo. **No contiene el equilibrio discreto de dos tipos ni deriva su umbral autónomo**. El cálculo de supermodularidad es correcto, pero la inferencia de emparejamiento debe leerse con las restricciones de asignación del modelo, no como una prueba completa de equilibrio. La frase final «la autonomía solo mueve el umbral» es demasiado estrecha: también cambia los usos de IA y su costo de oportunidad.
+
+Para completar la parte manuscrita discreta, copiar el siguiente bloque en **media carilla** (como máximo una hoja). Es una especialización de dos tipos, no una prueba del continuo. Aquí $\mu_L=\mu_H=1/2$, $z_L=0<z_H=H<1$ y $0<h<1$; no suponemos masas arbitrarias con salarios únicos. El ejemplo numérico usa $H=.8$, $h=.5$, $a=z_{AI}=.6$ y cómputo $\mu=10$.
 
 **Bloque a copiar:**
 
@@ -38,4 +40,4 @@ $$
 
 La IA autónoma compite en ambos papeles; la no autónoma solo asesora. El vaciado concreto del ejemplo y los cambios de ocupación están en `extensions.md`, §6. Las fórmulas discretas son derivación propia basada en las tecnologías de §3.1 de la v11, pp. 10–13; sus umbrales **no son** los del continuo de Prop. 5. La última línea fotografiada debe ser la comparación de umbrales, no solo el tamaño del equipo.
 
-La foto la añade la estudiante. Este repositorio no inventa esa evidencia.
+La foto fue aportada por la estudiante y se conserva literalmente. Cualquier ampliación manuscrita la añade la estudiante; este repositorio no inventa esa evidencia.
