@@ -1,0 +1,153 @@
+{
+  "schema": 1,
+  "paper": "IT25KnowledgeEconomy",
+  "source_url": "https://arxiv.org/abs/2312.05481v11",
+  "source_version": "arXiv v11, 2025-02-24",
+  "source_artifact_path": "papers/IT25KnowledgeEconomy/source-audited.pdf",
+  "source_artifact_sha256": "0b3c727a204f7801a9598dacd7ca7fdb385e21ee6877992ea0eb13c0538d8ebf",
+  "source_inventory_kind": "pinned_statement_target_scaffold",
+  "source_curated": false,
+  "seed_scaffold": true,
+  "source_coverage_mode": "named_theoretical_statements",
+  "semantic_contract_policy": {
+    "schema": 1,
+    "activation": "Before Lean drafting, independently inventory every material source atom against exact pinned source quote bytes; do not infer that inventory from declaration, binder, field, or function names. After a source item has an audited paper-local specification and a theorem/lemma proving or refuting it, add top-level semantic_contract_schema: 1 and semantic_route_schema: 2, classify every item with an explicit claim_bearing Boolean, and record a semantic_contract for each source result. Route a source definition, algorithm, model, assumption, or condition as source_semantic_declaration to the actual paper/library prerequisite used by the result Specs; never manufacture a theorem that merely restates a definition. At formalized closeout, also add source_claim_atoms_schema: 1 and complete the current raw-source-to-expanded-Spec review. Do not add a separate source_spec_correspondence worksheet, atom-to-component bridge ledger, or terminal-node disposition ledger: the builder-issued Lean graph owns the exact Spec/proof relation and complete recursive semantic and axiom closure, including proof and instance arguments. Each statement-first row supplies an inactive semantic_contract_template pairing its transparent `...Spec : Prop` with its theorem/lemma. Promote that exact template only after the independent source audit passes, the theorem has exactly the transparent Spec type, the closure record passes, and the proof hole is replaced. Do not manufacture a contract from the temporary by-sorry statement skeleton alone. Historical receipts remain readable records but cannot replace the current accepted obligation graph. For a source-game result whose feasible-action equilibrium comparison uses a conditional/posterior or observation-contingent value, add the separately byte-pinned `semantic_context_requirements` kind `strategic_observation_totality`; it requires an explicit off-path/zero-probability totality audit and cannot be satisfied by a Lean-only default value.",
+    "required_fields": [
+      "spec_declaration",
+      "evidence_declaration",
+      "evidence_mode",
+      "semantic_shape"
+    ],
+    "evidence_modes": [
+      "proves",
+      "refutes"
+    ],
+    "semantic_shapes": [
+      "plain"
+    ],
+    "shape_policy": "Only plain exact-proposition contracts are currently enforced. Do not record a specialized runtime, preprocessing, or refinement shape until the audit implements its structural check.",
+    "source_defect_routing": "Every repaired_in_lean source-proof defect must be linked from a successfully checked contract item through source_defect_ids."
+  },
+  "items": {
+    "proposition1_preAI_equilibrium": {
+      "statement": "In the absence of AI, there is a unique equilibrium. The equilibrium is efficient (i.e., it maximizes total output) and has the following features: occupational stratification W ≼ I ≼ S; positive assortative matching, with m : W → S strictly increasing; W and S are nonempty, while I is nonempty if and only if h > h₀ for some h₀ ∈ (0,1). Moreover, w is continuous, strictly increasing, convex (strictly so on W ∪ S), satisfies the three displayed wage equations on W, I, and S, and w(z) > z outside cl I (hence everywhere when h < h₀).",
+      "source_item": "Proposition 1",
+      "source_kind": "proposition",
+      "source_location": "page 16, Section 3.3, Proposition 1",
+      "source_url": "https://arxiv.org/abs/2312.05481v11",
+      "source_status": "semantically incomplete scaffold draft; not source-approved",
+      "spec_lean_declarations": [
+        "proposition1_preAI_equilibriumSpec"
+      ],
+      "proof_lean_declarations": [
+        "proposition1_preAI_equilibrium"
+      ],
+      "semantic_contract_template": {
+        "spec_declaration": "proposition1_preAI_equilibriumSpec",
+        "evidence_declaration": "proposition1_preAI_equilibrium",
+        "evidence_mode": "proves",
+        "semantic_shape": "plain"
+      }
+    },
+    "proposition2_autonomousAI_equilibrium": {
+      "statement": "In the presence of an autonomous AI, there is a unique equilibrium. The equilibrium is efficient; has occupational stratification W* ≼ I* ≼ S*; no worker is more knowledgeable than AI and no solver less knowledgeable than AI; has strictly increasing human matching m*, with AI-assisted workers below human-assisted workers and human solvers assisting humans below those assisting AI. AI is always used for independent production; if zAI ∈ W it is necessarily used as a worker, and if zAI ∈ S it is necessarily used as a solver. The rental rate is zAI. The wage is continuous, strictly increasing and convex (strictly on W*p ∪ S*p), obeys the five displayed wage formulas, and the three boundary wage equalities stated in the proposition.",
+      "source_item": "Proposition 2",
+      "source_kind": "proposition",
+      "source_location": "pages 18-19, Section 4, Proposition 2",
+      "source_url": "https://arxiv.org/abs/2312.05481v11",
+      "source_status": "semantically incomplete scaffold draft; not source-approved",
+      "spec_lean_declarations": [
+        "proposition2_autonomousAI_equilibriumSpec"
+      ],
+      "proof_lean_declarations": [
+        "proposition2_autonomousAI_equilibrium"
+      ],
+      "semantic_contract_template": {
+        "spec_declaration": "proposition2_autonomousAI_equilibriumSpec",
+        "evidence_declaration": "proposition2_autonomousAI_equilibrium",
+        "evidence_mode": "proves",
+        "semantic_shape": "plain"
+      }
+    },
+    "proposition3_occupational_displacement": {
+      "statement": "If zAI ∈ int W, AI displaces humans from routine knowledge work to specialized problem solving, i.e., W* ⊂ W and S* ⊃ S. In contrast, if zAI ∈ int S, AI displaces humans in the opposite direction, i.e., W* ⊃ W and S* ⊂ S.",
+      "source_item": "Proposition 3",
+      "source_kind": "proposition",
+      "source_location": "page 22, Section 5.1, Proposition 3",
+      "source_url": "https://arxiv.org/abs/2312.05481v11",
+      "source_status": "semantically incomplete scaffold draft; not source-approved",
+      "spec_lean_declarations": [
+        "proposition3_occupational_displacementSpec"
+      ],
+      "proof_lean_declarations": [
+        "proposition3_occupational_displacement"
+      ],
+      "semantic_contract_template": {
+        "spec_declaration": "proposition3_occupational_displacementSpec",
+        "evidence_declaration": "proposition3_occupational_displacement",
+        "evidence_mode": "proves",
+        "semantic_shape": "plain"
+      }
+    },
+    "proposition4_productivity_and_span": {
+      "statement": "If zAI ∈ int W, productivity is strictly lower post-AI for every z ∈ W* ⊂ W; for z ∈ S ⊂ S*, span of control is strictly larger when e(z) < zAI and strictly smaller when e(z) > zAI. If zAI ∈ int S, productivity for z ∈ W ⊂ W* is strictly higher when z < e(zAI) and strictly lower when z > e(zAI); span of control is strictly larger post-AI for every z ∈ S* ⊂ S.",
+      "source_item": "Proposition 4",
+      "source_kind": "proposition",
+      "source_location": "page 22, Section 5.1, Proposition 4",
+      "source_url": "https://arxiv.org/abs/2312.05481v11",
+      "source_status": "semantically incomplete scaffold draft; not source-approved",
+      "spec_lean_declarations": [
+        "proposition4_productivity_and_spanSpec"
+      ],
+      "proof_lean_declarations": [
+        "proposition4_productivity_and_span"
+      ],
+      "semantic_contract_template": {
+        "spec_declaration": "proposition4_productivity_and_spanSpec",
+        "evidence_declaration": "proposition4_productivity_and_span",
+        "evidence_mode": "proves",
+        "semantic_shape": "plain"
+      }
+    },
+    "proposition5_winners_at_extremes": {
+      "statement": "There are winners at the bottom if AI is good enough: B is nonempty if and only if zAI > z̄AI, where z̄AI ∈ int W. In contrast, there are always winners at the top: T is nonempty for all zAI ∈ [0,1).",
+      "source_item": "Proposition 5",
+      "source_kind": "proposition",
+      "source_location": "page 24, Section 5.2, Proposition 5",
+      "source_url": "https://arxiv.org/abs/2312.05481v11",
+      "source_status": "semantically incomplete scaffold draft; not source-approved",
+      "spec_lean_declarations": [
+        "proposition5_winners_at_extremesSpec"
+      ],
+      "proof_lean_declarations": [
+        "proposition5_winners_at_extremes"
+      ],
+      "semantic_contract_template": {
+        "spec_declaration": "proposition5_winners_at_extremesSpec",
+        "evidence_declaration": "proposition5_winners_at_extremes",
+        "evidence_mode": "proves",
+        "semantic_shape": "plain"
+      }
+    },
+    "proposition6_nonautonomousAI_equilibrium": {
+      "statement": "With non-autonomous AI there is a unique equilibrium; it is efficient, maximizes labor income, and r⋆ = 0. If zAI ≤ w(0), AI is unused and human occupations and wages equal their pre-AI values. If zAI > w(0), only the least knowledgeable use AI as solver: W⋆a ≼ (W⋆p ∪ I⋆ ∪ S⋆p), with all those sets nonempty except possibly I⋆. In all cases output is strictly higher with autonomous AI; non-autonomous AI creates losers; the least knowledgeable weakly prefer non-autonomous AI to no AI and autonomous AI (strictly if zAI > w(0)); and the most knowledgeable weakly prefer autonomous AI to non-autonomous AI (strictly away from z = 1).",
+      "source_item": "Proposition 6",
+      "source_kind": "proposition",
+      "source_location": "page 27, Section 6.1, Proposition 6",
+      "source_url": "https://arxiv.org/abs/2312.05481v11",
+      "source_status": "semantically incomplete scaffold draft; not source-approved",
+      "spec_lean_declarations": [
+        "proposition6_nonautonomousAI_equilibriumSpec"
+      ],
+      "proof_lean_declarations": [
+        "proposition6_nonautonomousAI_equilibrium"
+      ],
+      "semantic_contract_template": {
+        "spec_declaration": "proposition6_nonautonomousAI_equilibriumSpec",
+        "evidence_declaration": "proposition6_nonautonomousAI_equilibrium",
+        "evidence_mode": "proves",
+        "semantic_shape": "plain"
+      }
+    }
+  }
+}

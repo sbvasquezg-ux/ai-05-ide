@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="290" viewBox="0 0 1280 290" role="img" aria-labelledby="title desc">
+<title id="title">Artificial Intelligence in the Knowledge Economy</title>
+<desc id="desc">Ide y Talamàs, 2025. Capacidad, autonomía y distribución.</desc>
+<defs><linearGradient id="bg"><stop stop-color="#6D28D9"/><stop offset="1" stop-color="#0E7490"/></linearGradient></defs>
+<rect width="1280" height="290" fill="url(#bg)"/>
+<rect x="60" y="240" width="1160" height="4" fill="#F59E0B"/>
+<text x="60" y="55" fill="white" font-family="Arial,sans-serif" font-size="19" letter-spacing="3">AI &amp; ECONOMIC MODELING · REPOSITORY 05</text>
+<text x="60" y="121" fill="white" font-family="Georgia,serif" font-size="46" font-weight="bold">Artificial Intelligence</text>
+<text x="60" y="176" fill="white" font-family="Georgia,serif" font-size="46" font-weight="bold">in the Knowledge Economy</text>
+<text x="62" y="219" fill="white" font-family="Arial,sans-serif" font-size="22">Ide &amp; Talamàs (2025) · Capacidad, autonomía y distribución</text>
+</svg>
