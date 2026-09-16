@@ -1,0 +1,1 @@
+error: could not read papers/IT25KnowledgeEconomy/status.json: [Errno 2] No such file or directory: '/Users/belenvasquez/Documents/Codex/2026-09-15/https-github-com-alexanderquispe-ai-econ/work/AppliedModelingLib/papers/IT25KnowledgeEconomy/status.json'

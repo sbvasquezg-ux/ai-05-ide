@@ -1,0 +1,49 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ide-beamer}[2026/09/16 Shared Beamer style]
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+\RequirePackage{amsmath,amssymb,booktabs}
+\RequirePackage{graphicx}
+\RequirePackage{hyperref}
+\RequirePackage{xcolor}
+\RequirePackage{tikz}
+\RequirePackage{listings}
+\usetheme{default}
+\usecolortheme{seahorse}
+\definecolor{ITViolet}{HTML}{6D28D9}
+\definecolor{ITCyan}{HTML}{0E7490}
+\definecolor{ITAmber}{HTML}{F59E0B}
+\definecolor{ITRose}{HTML}{E11D48}
+\definecolor{ITPaper}{HTML}{F4F1FD}
+\definecolor{ITInk}{HTML}{14121F}
+\setbeamercolor{normal text}{fg=ITInk,bg=white}
+\setbeamercolor{structure}{fg=ITViolet}
+\setbeamercolor{frametitle}{fg=ITViolet,bg=ITPaper}
+\setbeamercolor{block title}{fg=white,bg=ITViolet}
+\setbeamercolor{block body}{fg=ITInk,bg=ITPaper}
+\setbeamercolor{alerted text}{fg=ITRose}
+\setbeamercolor{author in head/foot}{fg=ITCyan,bg=white}
+\setbeamercolor{date in head/foot}{fg=white,bg=ITViolet}
+\setbeamercolor{key}{fg=ITInk,bg=ITAmber!25}
+\setbeamerfont{title}{size=\LARGE,series=\bfseries}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{block title}{series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize item}{\color{ITViolet}$\blacktriangleright$}
+\setbeamertemplate{itemize subitem}{\color{ITCyan}$\bullet$}
+\setbeamertemplate{enumerate item}{\color{ITViolet}\insertenumlabel.}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{frametitle}{%
+ \nointerlineskip\begin{beamercolorbox}[wd=\paperwidth,sep=.17cm,leftskip=.35cm]{frametitle}\insertframetitle\strut\end{beamercolorbox}%
+ {\color{ITAmber}\hrule height 1pt}\vspace{.15cm}}
+\setbeamertemplate{footline}{\leavevmode\hbox{%
+\begin{beamercolorbox}[wd=.84\paperwidth,ht=2.6ex,dp=1.2ex,leftskip=1em]{author in head/foot}\insertshorttitle\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.16\paperwidth,ht=2.6ex,dp=1.2ex,center]{date in head/foot}\insertframenumber/\inserttotalframenumber\end{beamercolorbox}}}
+\setbeamersize{text margin left=.72cm,text margin right=.72cm}
+\hypersetup{colorlinks=true,urlcolor=ITCyan,linkcolor=ITViolet}
+\newcommand{\paperref}{Ide \& Talamàs (2025), arXiv v11}
+\newcommand{\RepoURL}{https://github.com/sbvasquezg-ux/ai-05-ide}
+\newcommand{\sourcefoot}[1]{\vfill{\fontsize{6.5}{8}\selectfont\color{ITCyan}Fuente: #1}}
+\newenvironment{keybox}{\begin{beamercolorbox}[sep=.55em]{key}}{\end{beamercolorbox}}
+\lstdefinelanguage{Lean}{morekeywords={theorem,lemma,def,structure,namespace,end,by,intro,have,exact,apply,rw,simp,field_simp,linarith,nlinarith,ring,import,variable},sensitive=true,morecomment=[l]{--}}
+\lstset{language=Lean,basicstyle=\ttfamily\scriptsize,backgroundcolor=\color{ITPaper},keywordstyle=\color{ITViolet},commentstyle=\color{ITCyan},numbers=none,breaklines=true,showstringspaces=false,columns=fullflexible,keepspaces=true}
